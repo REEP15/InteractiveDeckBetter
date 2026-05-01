@@ -51,6 +51,461 @@ body {
   transition: color 500ms ease;
 }
 
+.section-container {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  padding-top: 104px;
+}
+
+.scene-card-rise {
+  animation: deck-fade-up 560ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.metrics {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.metric {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  opacity: 0.8;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.metric svg {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  stroke: rgba(255, 255, 255, 0.88);
+  fill: none;
+  stroke-width: 1.5;
+  opacity: 0.8;
+}
+
+.flow-line {
+  stroke: white;
+  stroke-width: 2;
+  fill: none;
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+  animation: flow 3s ease-in-out infinite;
+}
+
+.pulse-node {
+  fill: white;
+  animation: pulse 2s ease-in-out infinite;
+  transform-origin: 50% 50%;
+  transform-box: fill-box;
+}
+
+.growth-line {
+  stroke: white;
+  stroke-width: 2;
+  fill: none;
+  stroke-dasharray: 150;
+  stroke-dashoffset: 150;
+  animation: grow 2.5s ease-out infinite;
+}
+
+.nav-bar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+  z-index: 100;
+}
+
+.logo-container {
+  position: fixed;
+  top: 20px;
+  left: 24px;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+}
+
+.nav-shell {
+  display: contents;
+}
+
+.hamburger {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.hamburger span {
+  width: 20px;
+  height: 2px;
+  background: white;
+}
+
+.logo-svg {
+  width: 100%;
+  height: 100%;
+  stroke: #d4af37;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.logo-svg path {
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+  animation: draw 1.8s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+}
+
+.lA, .lB { animation-delay: 0s; }
+.lC, .lD { animation-delay: 0.15s; }
+.l1, .l5 { animation-delay: 0.25s; }
+.l2, .l4 { animation-delay: 0.35s; }
+.l3      { animation-delay: 0.45s; }
+
+.band       { animation-delay: 0.50s; }
+.inner-arch { animation-delay: 0.58s; }
+.center     { animation-delay: 0.65s; }
+.arch       { animation-delay: 0.80s; }
+
+.cap {
+  stroke-dasharray: 20;
+  stroke-dashoffset: 20;
+  animation: draw 0.4s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+  stroke: none;
+  fill: #d4af37;
+}
+
+.cap1, .cap2 { animation-delay: 0.37s; }
+.cap3        { animation-delay: 0.47s; }
+
+.logo-svg {
+  animation: glow 4s ease-in-out infinite;
+  animation-delay: 2.2s;
+}
+
+.nav-dropdown {
+  position: fixed;
+  top: 80px;
+  left: 0;
+  width: 100%;
+  height: auto;
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(255, 255, 255, 0.08),
+    rgba(255, 215, 0, 0.08),
+    rgba(0, 0, 0, 0.95)
+  );
+  backdrop-filter: blur(12px);
+  z-index: 999;
+  padding: 40px;
+  border-radius: 10px;
+  pointer-events: auto;
+}
+
+.nav-dropdown p {
+  margin: 10px 0;
+  cursor: pointer;
+  opacity: 0.85;
+}
+
+.nav-arrows {
+  position: fixed;
+  top: 50%;
+  left: 24px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  opacity: 0.6;
+  z-index: 500;
+}
+
+.nav-arrows span {
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.end-experience {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 14px;
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.section-video-wrapper {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.section-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  z-index: -1;
+}
+
+.scene-video-drift {
+  animation: scene-video-drift 18s ease-in-out infinite alternate;
+}
+
+.scene-video-float {
+  animation: scene-video-float 20s ease-in-out infinite alternate;
+}
+
+.hero-background-video {
+  width: 100vw;
+  height: 100vh;
+}
+
+.hero-radial-system {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.orbital-scene {
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  background:
+    radial-gradient(circle at center, rgba(255, 255, 255, 0.06), transparent 42%),
+    radial-gradient(circle at 30% 30%, rgba(214, 179, 106, 0.16), transparent 54%);
+}
+
+.ring-outer,
+.ring-orbit,
+.centre-circle {
+  position: absolute;
+  inset: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 9999px;
+}
+
+.ring-outer {
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.ring-orbit {
+  width: 72%;
+  height: 72%;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.centre-circle {
+  width: 10rem;
+  height: 10rem;
+  background:
+    radial-gradient(circle at center, rgba(214, 179, 106, 0.3), rgba(12, 12, 12, 0.92) 72%);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 36px rgba(214, 179, 106, 0.18);
+}
+
+.centre-label {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.72rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.82);
+  text-align: center;
+  width: 8rem;
+}
+
+.orbit-ring {
+  position: absolute;
+  inset: 80px;
+  border-radius: 50%;
+  animation: spin 20s linear infinite;
+}
+
+.orbit-item {
+  position: absolute;
+  inset: 50%;
+}
+
+.orbit-pill {
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 7rem;
+  padding: 0.8rem 1rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(5, 5, 5, 0.52);
+  backdrop-filter: blur(12px);
+  cursor: pointer;
+  text-align: center;
+}
+
+.pill-label {
+  font-size: 0.68rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.95);
+  white-space: nowrap;
+}
+
+.luxury-gold-background {
+  background:
+    radial-gradient(circle at center, #000 0%, #bfa76f 50%, #fff 100%);
+  animation: luxury-gold-pulse 6s ease-in-out infinite;
+}
+
+.transition-overlay {
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.06), rgba(0, 0, 0, 0.82));
+}
+
+.scene-zoom-transition {
+  box-shadow: 0 0 40px rgba(255, 255, 255, 0.08);
+}
+
+@keyframes flow {
+  0% {
+    stroke-dashoffset: 200;
+    opacity: 0.4;
+  }
+
+  50% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+
+  100% {
+    stroke-dashoffset: -200;
+    opacity: 0.4;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+
+  50% {
+    transform: scale(1.4);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+}
+
+@keyframes grow {
+  0% {
+    stroke-dashoffset: 150;
+    opacity: 0.4;
+  }
+
+  60% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0.6;
+  }
+}
+
+@keyframes scene-video-drift {
+  0% {
+    transform: translate(-50%, -50%) scale(1.04);
+  }
+
+  50% {
+    transform: translate(-50%, -50%) scale(1.08);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1.04);
+  }
+}
+
+@keyframes scene-video-float {
+  0% {
+    transform: translate(-50%, -50%) scale(1.05);
+  }
+
+  50% {
+    transform: translate(-50%, -50%) scale(1.07);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1.05);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes luxury-gold-pulse {
+  0% {
+    opacity: 0.9;
+    filter: saturate(0.95) brightness(0.96);
+  }
+
+  50% {
+    opacity: 1;
+    filter: saturate(1.06) brightness(1.04);
+  }
+
+  100% {
+    opacity: 0.9;
+    filter: saturate(0.95) brightness(0.96);
+  }
+}
+
+@keyframes draw {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 4px rgba(212,175,55,0.10));
+  }
+  50% {
+    filter: drop-shadow(0 0 8px rgba(212,175,55,0.28));
+  }
+}
+
 @keyframes brand-marquee-scroll {
   from {
     transform: translateX(0);
